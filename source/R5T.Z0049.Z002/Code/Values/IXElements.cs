@@ -13,5 +13,8 @@ namespace R5T.Z0049.Z002
 
 
         public XElement Simple => Parsed.Simple;
+        public XElement SummaryWithPara => Parsed.SummaryWithPara;
+        public XElement MemberWithSummaryWithPara => Parsed.MemberWithSummaryWithPara;
+        public XElement Misformatted => Parsed.Misformatted;
     }
 }
