@@ -10,47 +10,33 @@ namespace R5T.Z0049.Z001
     [ValuesMarker]
     public partial interface IXmlTexts : IValuesMarker
     {
-        /// <summary>
-        /// "&lt;single /&gt;"
-        /// <para>A single element, self-closed, with a simple name, no content, and no attributes.</para>
-        /// <para>XML is well-formed, with a space before the closing solidus (slash).</para>
-        /// </summary>
-        public IXmlText SingleElement => "<single />".ToXmlText();
+#pragma warning disable IDE1006 // Naming Styles
+        public Platform.IXmlTexts _Platform => Platform.XmlTexts.Instance;
+#pragma warning restore IDE1006 // Naming Styles
 
-        public IXmlText SummaryAndRemarks =>
-@"
-<summary>
-Strongly-types a XElement as a a &lt;c&gt; tag in an XML documentation comment.
-<para>https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/xmldoc/recommended-tags#c</para>
-</summary>
-<remarks>
-This is a remark.
-</remarks>
-".Trim().ToXmlText();
 
-        public IXmlText SummaryWithPara =>
-@"
-<summary>
-Strongly-types a XElement as a a &lt;c&gt; tag in an XML documentation comment.
-<para>https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/xmldoc/recommended-tags#c</para>
-</summary>
-".Trim().ToXmlText();
+        /// <inheritdoc cref="Platform.IXmlTexts.SingleElement"/>
+        public IXmlText SingleElement => _Platform.SingleElement.ToXmlText();
 
-        public IXmlText MemberWithSummaryWithPara =>
-@"
-<member name=""T:R5T.T0211.ICElement"">
-    <summary>
-    Strongly-types a XElement as a a &lt;c&gt; tag in an XML documentation comment.
-    <para>https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/xmldoc/recommended-tags#c</para>
-    </summary>
-</member>
-".Trim().ToXmlText();
+        /// <inheritdoc cref="Platform.IXmlTexts.SummaryAndRemarks"/>
+        public IXmlText SummaryAndRemarks => _Platform.SummaryAndRemarks.ToXmlText();
 
-        public IXmlText Misformatted =>
-@"
-<summary>
-Strongly-types a XElement as a a &lt;c&gt; tag in an XML documentation comment.
-<para>https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/xmldoc/recommended-tags#c</para></summary>
-".Trim().ToXmlText();
+        /// <inheritdoc cref="Platform.IXmlTexts.MemberWithSummaryAndRemarks"/>
+        public IXmlText MemberWithSummaryAndRemarks => _Platform.MemberWithSummaryAndRemarks.ToXmlText();
+
+        /// <inheritdoc cref="Platform.IXmlTexts.MemberWithSummaryAndRemarks_Misformatted"/>
+        public IXmlText MemberWithSummaryAndRemarks_Misformatted => _Platform.MemberWithSummaryAndRemarks_Misformatted.ToXmlText();
+
+        /// <inheritdoc cref="Platform.IXmlTexts.MemberWithSummaryAndRemarks_Misformatted2"/>
+        public IXmlText MemberWithSummaryAndRemarks_Misformatted2 => _Platform.MemberWithSummaryAndRemarks_Misformatted2.ToXmlText();
+
+        /// <inheritdoc cref="Platform.IXmlTexts.SummaryWithPara"/>
+        public IXmlText SummaryWithPara => _Platform.SummaryWithPara.ToXmlText();
+
+        /// <inheritdoc cref="Platform.IXmlTexts.MemberWithSummaryWithPara"/>
+        public IXmlText MemberWithSummaryWithPara => _Platform.MemberWithSummaryWithPara.ToXmlText();
+
+        /// <inheritdoc cref="Platform.IXmlTexts.Misformatted"/>
+        public IXmlText Misformatted => _Platform.Misformatted.ToXmlText();
     }
 }
