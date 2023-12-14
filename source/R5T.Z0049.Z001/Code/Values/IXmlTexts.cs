@@ -15,6 +15,9 @@ namespace R5T.Z0049.Z001
 #pragma warning restore IDE1006 // Naming Styles
 
 
+        /// <inheritdoc cref="Platform.IXmlTexts.Complex_OrderedChildren"/>
+        public IXmlText Complex_OrderedChildren => _Platform.Complex_OrderedChildren.ToXmlText();
+
         /// <inheritdoc cref="Platform.IXmlTexts.SingleElement"/>
         public IXmlText SingleElement => _Platform.SingleElement.ToXmlText();
 
@@ -38,5 +41,8 @@ namespace R5T.Z0049.Z001
 
         /// <inheritdoc cref="Platform.IXmlTexts.Misformatted"/>
         public IXmlText Misformatted => _Platform.Misformatted.ToXmlText();
+
+        /// <inheritdoc cref="Platform.IXmlTexts.WithInsignificantWhitespace"/>
+        public IXmlText WithInsignificantWhitespace => _Platform.WithInsignificantWhitespace.ToXmlText();
     }
 }
